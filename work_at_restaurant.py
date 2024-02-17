@@ -19,8 +19,7 @@ class Restaurant:
         a.append(f'DROP 2 {d}')
     
     def __to_washer(self, a, d):
-        from_one = min(d, self.stacks[0])
-        if from_one != 0:
+        if (from_one := min(d, self.stacks[0])) != 0:
             d -= from_one
             self.stacks[0] -= from_one
             a.append(f'TAKE 1 {from_one}')
@@ -38,8 +37,7 @@ def test_case(n):
 def main():
     first = True
     while True:
-        n = int(input())
-        if n == 0:
+        if (n := int(input())) == 0:
             break
         if first:
             first = False

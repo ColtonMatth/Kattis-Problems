@@ -13,8 +13,7 @@ def add_test(n, s, p):
         return 'impossible' if 100 * n != s else 0
     k = get_score(n, s, p) 
     s += 100 * k
-    expect_sum = (n + k) * p
-    if expect_sum == s:
+    if (expect_sum := (n + k) * p) == s:
         return k
     for i in range(1, 100):
         if s + i == expect_sum:

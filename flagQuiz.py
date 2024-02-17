@@ -16,8 +16,7 @@ def fill_dist(n):
 def find_best(difference):
     least, least_element = 2147483647, []
     for i, row in enumerate(difference):
-        s = max(row)
-        if s == least:
+        if (s := max(row)) == least:
             least_element.append(i)
         elif s < least:
             least_element = [i]
